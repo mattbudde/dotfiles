@@ -1,0 +1,26 @@
+export ZSH="/Users/mdd/.oh-my-zsh"
+export GOPATH=$HOME/go
+export AWS_PROFILE=default
+eval "$(pyenv init -)"
+
+neofetch
+
+ZSH_THEME="spaceship"
+
+plugins=(git ruby osx pyenv aws auto-color-ls)
+
+source $ZSH/oh-my-zsh.sh
+
+alias zshconf="code ~/.zshrc"
+alias awsp="source _awsp"
+alias awsconf="code ~/.aws/credentials"
+alias ls="colorls"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
